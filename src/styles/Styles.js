@@ -12,11 +12,14 @@ export default StyleSheet.create({
     backgroundColor: Colors.PURPLE,
   },
   bgGrey: {
-    backgroundColor: Colors.GREY,
+    backgroundColor: Colors.LIGHT_GREY,
+  },
+  bgSecondary: {
+    backgroundColor: Colors.PURPLE,
   },
   shadow: {
     elevation: 10,
-    shadowColor: '#333',
+    shadowColor: Colors.GREY,
   },
   full: {
     flex: 1,
@@ -45,8 +48,14 @@ export default StyleSheet.create({
   flexStart: {
     justifyContent: 'flex-start',
   },
+  flexEnd: {
+    justifyContent: 'flex-end',
+  },
   alignCenter: {
     alignItems: 'center',
+  },
+  alignRight: {
+    alignItems: 'flex-end',
   },
   textCenter: {
     textAlign: 'center',
@@ -193,7 +202,7 @@ export default StyleSheet.create({
     marginLeft: 40,
   },
   bd: {
-    borderColor: Colors.GREY,
+    borderColor: Colors.LIGHT_GREY,
     borderWidth: 1,
   },
   bdRad1: {
