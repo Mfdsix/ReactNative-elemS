@@ -129,6 +129,18 @@ export default StyleSheet.create({
   pr0: {
     paddingRight: 0,
   },
+  mg1: {
+    margin: 10,
+  },
+  mg2: {
+    margin: 20,
+  },
+  mg3: {
+    margin: 30,
+  },
+  mg4: {
+    margin: 40,
+  },
   mh1: {
     marginHorizontal: 10,
   },

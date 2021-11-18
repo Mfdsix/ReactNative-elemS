@@ -1,45 +1,89 @@
 import React from 'react';
-import { View, Text, Image, ScrollView } from 'react-native';
-import { Icon } from 'react-native-elements';
-import Header from "../component/Header";
-import BottomNavigation from "../component/BottomNavigation";
+import {View, Text, Image, ScrollView} from 'react-native';
+import {Icon} from 'react-native-elements';
+import Header from '../components/Header';
+import BottomNavigation from '../components/BottomNavigation';
 
-export default function Chat(){
-    return <View>
-    <Header
-    title="Chat"
-    rightIcon={
-        <Icon name="ellipsis-vertical-outline" type="ionicon"/>
-    }
-    />
-        <ScrollView>
-            {/* search */}
-            <View>
-                <Text>Search</Text>
-                <Icon name="search-outline" type="ionicon"/>
+import Styles from '../styles/Styles';
+import ScreenStyles from '../styles/Chat';
+
+import CHATS from '../data/Chat';
+import Colors from '../values/Colors';
+
+export default function Chat({navigation}) {
+  return (
+    <View style={[Styles.full, Styles.bg]}>
+      <Header
+        onPress={() => navigation.navigate('Home')}
+        title="Chat"
+        rightIcon={<Icon name="ellipsis-vertical-outline" type="ionicon" />}
+      />
+      <ScrollView style={Styles.full}>
+        {/* search */}
+        <View
+          style={[
+            Styles.mg2,
+            Styles.flexRow,
+            Styles.flexBetween,
+            Styles.alignCenter,
+            Styles.pv1,
+            Styles.ph2,
+            Styles.bgGrey,
+            Styles.bdRad1,
+          ]}>
+          <Text style={[Styles.textGrey]}>Search</Text>
+          <Icon color={Colors.GREY} name="search-outline" type="ionicon" />
+        </View>
+        {/* chat list */}
+        <View style={[Styles.ph2]}>
+          {CHATS.map((chat, index) => (
+            <View
+              key={index}
+              style={[Styles.flexRow, Styles.flexBetween, Styles.pv2]}>
+              <View style={Styles.relative}>
+                <Image style={ScreenStyles.userImage} source={chat.image} />
+                <View
+                  style={[
+                    Styles.absolute,
+                    ScreenStyles.onlineIndicator,
+                    {
+                      backgroundColor:
+                        index % 2 == 0 ? Colors.GREEN : Colors.GREY,
+                    },
+                  ]}
+                />
+              </View>
+              <View style={[Styles.full, Styles.mh2]}>
+                <Text style={[Styles.textDark, Styles.textBold]}>
+                  {chat.recipient}
+                </Text>
+                <Text numberOfLines={1} style={Styles.textGrey}>
+                  {chat.lastChat}
+                </Text>
+              </View>
+              <View style={Styles.alignRight}>
+                <Text style={[Styles.textGrey, Styles.textSm]}>
+                  {chat.lastChatTime}
+                </Text>
+                {chat.unread > 0 && (
+                  <View
+                    style={[
+                      Styles.bgPrimary,
+                      ScreenStyles.chatBadge,
+                      Styles.alignCenter,
+                      Styles.flexCenter,
+                    ]}>
+                    <Text style={[Styles.textWhite, Styles.textSm]}>
+                      {chat.unread}
+                    </Text>
+                  </View>
+                )}
+              </View>
             </View>
-            {/* chat list */}
-            <View>
-                { CHATS.map((chat, index) => (
-                    <View key={index}>
-                        <View>
-                            <Image source={ chat.image }/>
-                            <View/>
-                        </View>
-                        <View>
-                            <Text>{ chat.recipient }</Text>
-                            <Text>{ chat.lastChat }</Text>
-                        </View>
-                        <View>
-                            <Text>{ chat.lastChatTime }</Text>
-                            { chat.unread > 0 &&  <View>
-                                <Text>{ chat.unread }</Text>
-                            </View> }
-                        </View>
-                    </View>
-                )) }
-            </View>
-        </ScrollView>
-        <BottomNavigation active={ 2 }/>
+          ))}
+        </View>
+      </ScrollView>
+      <BottomNavigation navigation={navigation} active={2} />
     </View>
+  );
 }

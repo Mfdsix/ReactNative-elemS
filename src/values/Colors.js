@@ -1,5 +1,6 @@
 export default {
   RED: '#ee3e3c',
+  GREEN: '#43b36a',
   GREY: '#9698a1',
   LIGHT_GREY: '#eee',
   BLACK: '#414157',

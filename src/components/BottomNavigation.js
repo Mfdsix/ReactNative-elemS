@@ -32,7 +32,8 @@ export default function BottomNavigation(props) {
     <View
       style={[
         Styles.bg,
-        Styles.pd2,
+        Styles.ph2,
+        Styles.pv1,
         Styles.flexRow,
         Styles.flexBetween,
         Styles.alignCenter,
