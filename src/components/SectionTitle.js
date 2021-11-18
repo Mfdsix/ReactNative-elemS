@@ -1,11 +1,13 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import {View, Text} from 'react-native';
 
-export default function SectionTitle(props){
-    return <View>
-        <Text>{ props.title }</Text>
-        <Text>{ props.linkText }</Text>
+import Styles from '../styles/Styles';
+
+export default function SectionTitle(props) {
+  return (
+    <View style={[props.style, Styles.flexRow, Styles.flexBetween]}>
+      <Text style={[Styles.textBold, Styles.textDark]}>{props.title}</Text>
+      <Text style={[Styles.textGrey]}>{props.linkText}</Text>
     </View>
+  );
 }
-
-const SectionTitleStyle = StyleSheet.create({})

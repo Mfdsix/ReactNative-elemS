@@ -6,7 +6,17 @@ export default StyleSheet.create({
     backgroundColor: Colors.WHITE,
   },
   bgPrimary: {
-    backgroundColor: Colors.GREEN,
+    backgroundColor: Colors.RED,
+  },
+  bgSecondary: {
+    backgroundColor: Colors.PURPLE,
+  },
+  bgGrey: {
+    backgroundColor: Colors.GREY,
+  },
+  shadow: {
+    elevation: 10,
+    shadowColor: '#333',
   },
   full: {
     flex: 1,
@@ -169,6 +179,18 @@ export default StyleSheet.create({
   },
   mr4: {
     marginRight: 40,
+  },
+  ml1: {
+    marginLeft: 10,
+  },
+  ml2: {
+    marginLeft: 20,
+  },
+  ml3: {
+    marginLeft: 30,
+  },
+  ml4: {
+    marginLeft: 40,
   },
   bd: {
     borderColor: Colors.GREY,
