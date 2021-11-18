@@ -1,16 +1,18 @@
 import React from 'react';
 import { View, Text, Image, ScrollView } from 'react-native';
 import { Icon } from 'react-native-elements';
+import Header from "../component/Header";
 
 export default function Detail(){
-    <View>
-        <View>
-            <Icon name="arrow-back-outline" type="ionicon"/>
-            <Text>Details</Text>
+    return <View>
+        <Header
+        title="Details"
+        rightIcon={
             <View>
                 <Icon name="heart-outline" type="ionicon"/>
             </View>
-        </View>
+        }
+        />
         <ScrollView>
             {/* image */}
             <View>
