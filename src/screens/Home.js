@@ -212,10 +212,16 @@ export default function Home({navigation}) {
                       {instructor.expertise}
                     </Text>
                     <Text style={[Styles.textDark, Styles.mt1]}>
-                      {instructor.students} students
+                      {instructor.students}{' '}
+                      <Text style={[Styles.textGrey, Styles.textSm]}>
+                        students
+                      </Text>
                     </Text>
                     <Text style={[Styles.textDark]}>
-                      {instructor.courses} courses
+                      {instructor.courses}{' '}
+                      <Text style={[Styles.textGrey, Styles.textSm]}>
+                        courses
+                      </Text>
                     </Text>
                     <View style={Styles.flexRow}>
                       <Text

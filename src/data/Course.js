@@ -13,7 +13,7 @@ const COURSES = [
     author: 'Mfdsix',
     videos: 30,
     rating: 4.6,
-    progress: 65,
+    progress: 43,
     duration: '4 Hours 2 Minutes',
   },
   {
@@ -43,7 +43,7 @@ const COURSES = [
     author: 'Mfdsix',
     videos: 30,
     rating: 4.6,
-    progress: 65,
+    progress: 30,
     duration: '4 Hours 2 Minutes',
   },
   {
@@ -53,7 +53,7 @@ const COURSES = [
     author: 'Mfdsix',
     videos: 30,
     rating: 4.6,
-    progress: 65,
+    progress: 50,
     duration: '4 Hours 2 Minutes',
   },
   {
@@ -63,7 +63,7 @@ const COURSES = [
     author: 'Mfdsix',
     videos: 30,
     rating: 4.6,
-    progress: 65,
+    progress: 78,
     duration: '4 Hours 2 Minutes',
   },
 ];
