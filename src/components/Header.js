@@ -1,17 +1,25 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
+import {View, TouchableOpacity, Text} from 'react-native';
+import {Icon} from 'react-native-elements';
+import Styles from '../styles/Styles';
 
 export default function Header(props) {
   return (
-    <View>
-      <Icon name="arrow-back-outline" type="ionicon" />
-      <Text>{props.title}</Text>
+    <View
+      style={[
+        Styles.bg,
+        Styles.flexRow,
+        Styles.pd2,
+        Styles.flexBetween,
+        Styles.shadow,
+      ]}>
+      <TouchableOpacity onPress={props.onPress} activeOpacity={0.7}>
+        <Icon name="arrow-back-outline" type="ionicon" />
+      </TouchableOpacity>
+      <Text style={[Styles.textDark, Styles.textBold, Styles.textMd]}>
+        {props.title}
+      </Text>
       {props.rightIcon}
-      <View>
-        <Icon name="heart-outline" type="ionicon" />
-      </View>
     </View>
   );
 }
-
-const HeaderStyles = StyleSheet.create({});

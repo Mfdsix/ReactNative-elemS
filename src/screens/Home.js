@@ -222,7 +222,12 @@ export default function Home({navigation}) {
                         style={[Styles.textDark, Styles.textSm, Styles.mr1]}>
                         {instructor.rating}
                       </Text>
-                      <Icon size={14} name="star-outline" type="ionicon" />
+                      <Icon
+                        size={14}
+                        color={Colors.ORANGE}
+                        name="star"
+                        type="ionicon"
+                      />
                     </View>
                   </View>
                   <Image

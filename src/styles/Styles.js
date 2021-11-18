@@ -208,8 +208,14 @@ export default StyleSheet.create({
   bdRad1: {
     borderRadius: 10,
   },
+  bdRad2: {
+    borderRadius: 20,
+  },
+  bdRad3: {
+    borderRadius: 30,
+  },
   btn: {
-    backgroundColor: Colors.GREEN,
+    backgroundColor: Colors.RED,
     borderRadius: 10,
     paddingHorizontal: 20,
     paddingVertical: 15,
