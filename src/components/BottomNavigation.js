@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import {View, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {Icon} from 'react-native-elements';
 import Colors from '../values/Colors';
 import Styles from '../styles/Styles';
@@ -39,25 +39,29 @@ export default function BottomNavigation(props) {
         Styles.shadow,
       ]}>
       {MENU_ITEMS.map((item, index) => (
-        <View
-          key={index}
-          style={[
-            Styles.flexRow,
-            Styles.alignCenter,
-            index == props.active ? BottomNavigationStyles.itemContainer : {},
-          ]}>
-          <Icon
-            color={index == props.active ? Colors.RED : Colors.GREY}
-            name={item.icon}
-            type="ionicon"
-            style={Styles.mr1}
-          />
-          {index == props.active && (
-            <Text style={[Styles.textPrimary, Styles.textBold, Styles.textSm]}>
-              {item.title}
-            </Text>
-          )}
-        </View>
+        <TouchableOpacity
+          onPress={() => props.navigation.navigate(item.target)}>
+          <View
+            key={index}
+            style={[
+              Styles.flexRow,
+              Styles.alignCenter,
+              index == props.active ? BottomNavigationStyles.itemContainer : {},
+            ]}>
+            <Icon
+              color={index == props.active ? Colors.RED : Colors.GREY}
+              name={item.icon}
+              type="ionicon"
+              style={Styles.mr1}
+            />
+            {index == props.active && (
+              <Text
+                style={[Styles.textPrimary, Styles.textBold, Styles.textSm]}>
+                {item.title}
+              </Text>
+            )}
+          </View>
+        </TouchableOpacity>
       ))}
     </View>
   );
