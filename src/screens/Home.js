@@ -15,8 +15,8 @@ import INSTRUCTORS from '../data/Instructor';
 
 const ACCENT_COLORS = [
   Colors.ACCENT_GREEN,
-  Colors.ACCENT_ORANGE,
   Colors.ACCENT_PURPLE,
+  Colors.ACCENT_ORANGE,
 ];
 
 export default function Home() {
