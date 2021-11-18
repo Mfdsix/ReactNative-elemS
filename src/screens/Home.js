@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image, ScrollView} from 'react-native';
+import {View, Text, Image, ScrollView, TouchableOpacity} from 'react-native';
 import {Icon} from 'react-native-elements';
 
 import BottomNavigation from '../components/BottomNavigation';
@@ -19,7 +19,7 @@ const ACCENT_COLORS = [
   Colors.ACCENT_ORANGE,
 ];
 
-export default function Home() {
+export default function Home({navigation}) {
   return (
     <View style={[Styles.full, Styles.bg]}>
       <ScrollView style={Styles.full}>
@@ -108,76 +108,80 @@ export default function Home() {
           <View style={Styles.ml1}>
             <ScrollView horizontal={true}>
               {COURSES.map((course, index) => (
-                <View
-                  key={index}
-                  style={[
-                    Styles.bg,
-                    Styles.shadow,
-                    Styles.bdRad1,
-                    Styles.mr2,
-                    Styles.mb2,
-                    Styles.mt1,
-                    Styles.ml1,
-                    ScreenStyles.courseContainer,
-                  ]}>
-                  <View style={Styles.relative}>
-                    <Image
-                      style={ScreenStyles.courseImage}
-                      source={course.image}
-                    />
-                    <View
-                      style={[
-                        Styles.absolute,
-                        Styles.bgSecondary,
-                        Styles.pd1,
-                        ScreenStyles.coursePrice,
-                      ]}>
-                      <Text style={[Styles.textWhite]}>${course.price}</Text>
-                    </View>
-                  </View>
-                  <View style={[Styles.mt2, Styles.pd1]}>
-                    <Text
-                      style={[
-                        Styles.textBold,
-                        Styles.textDark,
-                        Styles.textWrap,
-                      ]}>
-                      {course.title}
-                    </Text>
-                    <Text style={[Styles.textSm, Styles.textGrey]}>
-                      By {course.author}
-                    </Text>
-                    <View
-                      style={[
-                        Styles.mt1,
-                        Styles.flexRow,
-                        Styles.alignCenter,
-                        Styles.flexBetween,
-                      ]}>
-                      <View style={[Styles.flexRow, Styles.alignCenter]}>
-                        <Icon
-                          color={Colors.RED}
-                          name="play-circle-outline"
-                          type="ionicon"
-                        />
-                        <Text style={[Styles.textDark, Styles.textSm]}>
-                          {course.videos} Tutorial
-                        </Text>
-                      </View>
-                      <View style={[Styles.flexRow, Styles.alignCenter]}>
-                        <Icon
-                          size={16}
-                          color={Colors.ORANGE}
-                          name="star"
-                          type="ionicon"
-                        />
-                        <Text style={[Styles.textDark, Styles.textSm]}>
-                          {course.rating}
-                        </Text>
+                <TouchableOpacity
+                  onPress={() => navigation.navigate('Detail')}
+                  activeOpacity={0.7}
+                  key={index}>
+                  <View
+                    style={[
+                      Styles.bg,
+                      Styles.shadow,
+                      Styles.bdRad1,
+                      Styles.mr2,
+                      Styles.mb2,
+                      Styles.mt1,
+                      Styles.ml1,
+                      ScreenStyles.courseContainer,
+                    ]}>
+                    <View style={Styles.relative}>
+                      <Image
+                        style={ScreenStyles.courseImage}
+                        source={course.image}
+                      />
+                      <View
+                        style={[
+                          Styles.absolute,
+                          Styles.bgSecondary,
+                          Styles.pd1,
+                          ScreenStyles.coursePrice,
+                        ]}>
+                        <Text style={[Styles.textWhite]}>${course.price}</Text>
                       </View>
                     </View>
+                    <View style={[Styles.mt2, Styles.pd1]}>
+                      <Text
+                        style={[
+                          Styles.textBold,
+                          Styles.textDark,
+                          Styles.textWrap,
+                        ]}>
+                        {course.title}
+                      </Text>
+                      <Text style={[Styles.textSm, Styles.textGrey]}>
+                        By {course.author}
+                      </Text>
+                      <View
+                        style={[
+                          Styles.mt1,
+                          Styles.flexRow,
+                          Styles.alignCenter,
+                          Styles.flexBetween,
+                        ]}>
+                        <View style={[Styles.flexRow, Styles.alignCenter]}>
+                          <Icon
+                            color={Colors.RED}
+                            name="play-circle-outline"
+                            type="ionicon"
+                          />
+                          <Text style={[Styles.textDark, Styles.textSm]}>
+                            {course.videos} Tutorial
+                          </Text>
+                        </View>
+                        <View style={[Styles.flexRow, Styles.alignCenter]}>
+                          <Icon
+                            size={16}
+                            color={Colors.ORANGE}
+                            name="star"
+                            type="ionicon"
+                          />
+                          <Text style={[Styles.textDark, Styles.textSm]}>
+                            {course.rating}
+                          </Text>
+                        </View>
+                      </View>
+                    </View>
                   </View>
-                </View>
+                </TouchableOpacity>
               ))}
             </ScrollView>
           </View>
@@ -232,7 +236,7 @@ export default function Home() {
         </View>
         {/*  */}
       </ScrollView>
-      <BottomNavigation active={0} />
+      <BottomNavigation navigation={navigation} active={0} />
     </View>
   );
 }

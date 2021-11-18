@@ -40,9 +40,9 @@ export default function BottomNavigation(props) {
       ]}>
       {MENU_ITEMS.map((item, index) => (
         <TouchableOpacity
-          onPress={() => props.navigation.navigate(item.target)}>
+          onPress={() => props.navigation.navigate(item.target)}
+          key={index}>
           <View
-            key={index}
             style={[
               Styles.flexRow,
               Styles.alignCenter,
