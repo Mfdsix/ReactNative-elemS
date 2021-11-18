@@ -39,9 +39,4 @@ export default function BottomNavigation(props){
 }
 
 const BottomNavigationStyles = StyleSheet.create({
-    container: {
-        height: 60,
-        backgroundColor: Colors.WHITE,
-        elevation: 10,
-    },
 })

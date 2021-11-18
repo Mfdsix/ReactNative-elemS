@@ -10,3 +10,5 @@ export default function Header(props){
             </View>
         </View>
 }
+
+const HeaderStyles = StyleSheet.create({})
