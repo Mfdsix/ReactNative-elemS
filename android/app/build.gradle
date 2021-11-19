@@ -153,9 +153,9 @@ android {
             keyPassword 'android'
         }
         release {
-            storeFile file('elems.keystore')
+            storeFile file('release.keystore')
             storePassword 'elemes123'
-            keyAlias 'elemes123'
+            keyAlias 'release-key'
             keyPassword 'elemes123'
         }
     }
