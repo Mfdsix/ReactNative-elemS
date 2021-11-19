@@ -16,9 +16,12 @@ export default function Header(props) {
       <TouchableOpacity onPress={props.onPress} activeOpacity={0.7}>
         <Icon name="arrow-back-outline" type="ionicon" />
       </TouchableOpacity>
-      <Text style={[Styles.textDark, Styles.textBold, Styles.textMd]}>
-        {props.title}
-      </Text>
+      {!props.titleView && (
+        <Text style={[Styles.textDark, Styles.textBold, Styles.textMd]}>
+          {props.title}
+        </Text>
+      )}
+      {props.titleView && props.titleView}
       {props.rightIcon}
     </View>
   );

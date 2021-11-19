@@ -5,6 +5,7 @@ import HomeScreen from './screens/Home';
 import DetailScreen from './screens/Detail';
 import CourseScreen from './screens/Course';
 import ChatScreen from './screens/Chat';
+import ChatRoomScreen from './screens/ChatRoom';
 
 const Stack = createNativeStackNavigator();
 
@@ -17,6 +18,7 @@ const Routes = () => (
       <Stack.Screen name="Detail" component={DetailScreen} />
       <Stack.Screen name="Course" component={CourseScreen} />
       <Stack.Screen name="Chat" component={ChatScreen} />
+      <Stack.Screen name="ChatRoom" component={ChatRoomScreen} />
     </Stack.Navigator>
   </NavigationContainer>
 );

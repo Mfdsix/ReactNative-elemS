@@ -49,7 +49,46 @@ const CHATS = [
     unread: 2,
   },
 ];
-const CHAT = {};
+const CHAT = [
+  {
+    isSender: false,
+    chat: 'hallo',
+  },
+  {
+    isSender: true,
+    chat: 'hallo,',
+  },
+  {
+    isSender: false,
+    chat: [
+      {
+        text: 'mas mau nanya materi 2',
+      },
+      {
+        text: 'itukan bla bla bla bla. nah itu gimana ya ?',
+      },
+    ],
+  },
+  {
+    isSender: true,
+    chat: [
+      {
+        text: 'oh yang itu ya',
+      },
+      {
+        text: 'jadi gini, blibli bliblib blibliblib. dapet gak?',
+      },
+    ],
+  },
+  {
+    isSender: false,
+    chat: 'oh ok mas, tengsyu',
+  },
+  {
+    isSender: true,
+    chat: '👍',
+  },
+];
 
 export {CHAT};
 

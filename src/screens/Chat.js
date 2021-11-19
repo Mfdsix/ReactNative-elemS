@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image, ScrollView} from 'react-native';
+import {View, Text, Image, ScrollView, TouchableOpacity} from 'react-native';
 import {Icon} from 'react-native-elements';
 import Header from '../components/Header';
 import BottomNavigation from '../components/BottomNavigation';
@@ -37,49 +37,51 @@ export default function Chat({navigation}) {
         {/* chat list */}
         <View style={[Styles.ph2]}>
           {CHATS.map((chat, index) => (
-            <View
+            <TouchableOpacity
               key={index}
-              style={[Styles.flexRow, Styles.flexBetween, Styles.pv2]}>
-              <View style={Styles.relative}>
-                <Image style={ScreenStyles.userImage} source={chat.image} />
-                <View
-                  style={[
-                    Styles.absolute,
-                    ScreenStyles.onlineIndicator,
-                    {
-                      backgroundColor:
-                        index % 2 == 0 ? Colors.GREEN : Colors.GREY,
-                    },
-                  ]}
-                />
-              </View>
-              <View style={[Styles.full, Styles.mh2]}>
-                <Text style={[Styles.textDark, Styles.textBold]}>
-                  {chat.recipient}
-                </Text>
-                <Text numberOfLines={1} style={Styles.textGrey}>
-                  {chat.lastChat}
-                </Text>
-              </View>
-              <View style={Styles.alignRight}>
-                <Text style={[Styles.textGrey, Styles.textSm]}>
-                  {chat.lastChatTime}
-                </Text>
-                {chat.unread > 0 && (
+              onPress={() => navigation.navigate('ChatRoom')}>
+              <View style={[Styles.flexRow, Styles.flexBetween, Styles.pv2]}>
+                <View style={Styles.relative}>
+                  <Image style={ScreenStyles.userImage} source={chat.image} />
                   <View
                     style={[
-                      Styles.bgPrimary,
-                      ScreenStyles.chatBadge,
-                      Styles.alignCenter,
-                      Styles.flexCenter,
-                    ]}>
-                    <Text style={[Styles.textWhite, Styles.textSm]}>
-                      {chat.unread}
-                    </Text>
-                  </View>
-                )}
+                      Styles.absolute,
+                      ScreenStyles.onlineIndicator,
+                      {
+                        backgroundColor:
+                          index % 2 == 0 ? Colors.GREEN : Colors.GREY,
+                      },
+                    ]}
+                  />
+                </View>
+                <View style={[Styles.full, Styles.mh2]}>
+                  <Text style={[Styles.textDark, Styles.textBold]}>
+                    {chat.recipient}
+                  </Text>
+                  <Text numberOfLines={1} style={Styles.textGrey}>
+                    {chat.lastChat}
+                  </Text>
+                </View>
+                <View style={Styles.alignRight}>
+                  <Text style={[Styles.textGrey, Styles.textSm]}>
+                    {chat.lastChatTime}
+                  </Text>
+                  {chat.unread > 0 && (
+                    <View
+                      style={[
+                        Styles.bgPrimary,
+                        ScreenStyles.chatBadge,
+                        Styles.alignCenter,
+                        Styles.flexCenter,
+                      ]}>
+                      <Text style={[Styles.textWhite, Styles.textSm]}>
+                        {chat.unread}
+                      </Text>
+                    </View>
+                  )}
+                </View>
               </View>
-            </View>
+            </TouchableOpacity>
           ))}
         </View>
       </ScrollView>
