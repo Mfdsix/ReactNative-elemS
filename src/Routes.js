@@ -6,6 +6,7 @@ import DetailScreen from './screens/Detail';
 import CourseScreen from './screens/Course';
 import ChatScreen from './screens/Chat';
 import ChatRoomScreen from './screens/ChatRoom';
+import ProfileScreen from './screens/Profile';
 
 const Stack = createNativeStackNavigator();
 
@@ -19,6 +20,7 @@ const Routes = () => (
       <Stack.Screen name="Course" component={CourseScreen} />
       <Stack.Screen name="Chat" component={ChatScreen} />
       <Stack.Screen name="ChatRoom" component={ChatRoomScreen} />
+      <Stack.Screen name="Profile" component={ProfileScreen} />
     </Stack.Navigator>
   </NavigationContainer>
 );
